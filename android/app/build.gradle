@@ -53,7 +53,20 @@ android {
         }
     }
 }
+apply plugin: 'com.android.application'
 
+// Add this line
+apply plugin: 'com.google.gms.google-services'
+
+
+dependencies {
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+
+
+    // Add the dependencies for the desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
+}
 flutter {
     source '../..'
 }
